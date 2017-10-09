@@ -26,7 +26,7 @@ export class WelcomePage {
     if (this.userIsAuthorized(this.email, this.password)) {
       this.navCtrl.push(HomePage , {})
     } else {
-      console.log("Authentication error");
+      alert("Authentication error");
     }
   }
 

@@ -60,7 +60,6 @@ var WelcomePage = (function () {
         this.authorizedUsers = new Map();
         this.authorizedUsers.set("admin@frlp.utn.edu.ar", "password1");
         this.authorizedUsers.set("octavio@gmail.com", "password2");
-        console.log("Fin initialization");
     }
     /**
      * Realiza el log in del usuario. Si es exitoso, lo redirige a la HomePage de la aplicación
@@ -71,7 +70,7 @@ var WelcomePage = (function () {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */], {});
         }
         else {
-            console.log("Authentication error");
+            alert("Authentication error");
         }
     };
     /**
