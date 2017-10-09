@@ -1,6 +1,7 @@
 node_modules/
 temp/
 www/
+.sourcemaps/
 *.DS_Store
 *.log
 *.swp
