@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-<form (ngSubmit)="logIn($event)">
+<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">
   <ion-item>
-    <ion-input type="email" placeholder="Ingrese su email" name="email" [(ngModel)]="email"></ion-input>
+    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="password" placeholder="Ingrese su contraseña" name="password" [(ngModel)]="password"></ion-input>
+    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>
   </ion-item>
-  <button ion-button block type="submit">Sign In</button>
+  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>
 </form>
 </ion-content>

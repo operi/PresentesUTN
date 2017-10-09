@@ -10,12 +10,10 @@ import { HomePage } from '../home/home';
 export class WelcomePage {
 
   authorizedUsers: Map<string, string> = new Map<string, string>();
-  email: string;
+  dni: string;
   password: string;
 
   constructor(public navCtrl: NavController) {
-    this.authorizedUsers.set("admin@frlp.utn.edu.ar", "password1");
-    this.authorizedUsers.set("octavio@gmail.com", "password2");
   }
 
   /**
@@ -23,7 +21,7 @@ export class WelcomePage {
    * 
    */
   logIn(event) : void {
-    if (this.userIsAuthorized(this.email, this.password)) {
+    if (this.userIsAuthorized(this.dni, this.password)) {
       this.navCtrl.push(HomePage , {})
     } else {
       alert("Authentication error");
@@ -33,7 +31,11 @@ export class WelcomePage {
   /**
    * Mocking authentication
    */
-  userIsAuthorized(email, password) : boolean {
-    return this.authorizedUsers.get(email) === password;
+  userIsAuthorized(dni, password) : boolean {
+    this.authorizedUsers.set("12345678", "password1");
+    this.authorizedUsers.set("23456789", "password2");
+    let passwordUser =  this.authorizedUsers.get(dni);
+    console.log(passwordUser);
+    return passwordUser === password;
   }
 }

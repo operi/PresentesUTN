@@ -58,15 +58,13 @@ var WelcomePage = (function () {
     function WelcomePage(navCtrl) {
         this.navCtrl = navCtrl;
         this.authorizedUsers = new Map();
-        this.authorizedUsers.set("admin@frlp.utn.edu.ar", "password1");
-        this.authorizedUsers.set("octavio@gmail.com", "password2");
     }
     /**
      * Realiza el log in del usuario. Si es exitoso, lo redirige a la HomePage de la aplicación
      *
      */
     WelcomePage.prototype.logIn = function (event) {
-        if (this.userIsAuthorized(this.email, this.password)) {
+        if (this.userIsAuthorized(this.dni, this.password)) {
             this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */], {});
         }
         else {
@@ -76,14 +74,18 @@ var WelcomePage = (function () {
     /**
      * Mocking authentication
      */
-    WelcomePage.prototype.userIsAuthorized = function (email, password) {
-        return this.authorizedUsers.get(email) === password;
+    WelcomePage.prototype.userIsAuthorized = function (dni, password) {
+        this.authorizedUsers.set("12345678", "password1");
+        this.authorizedUsers.set("23456789", "password2");
+        var passwordUser = this.authorizedUsers.get(dni);
+        console.log(passwordUser);
+        return passwordUser === password;
     };
     return WelcomePage;
 }());
 WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input type="email" placeholder="Ingrese su email" name="email" [(ngModel)]="email"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" name="password" [(ngModel)]="password"></ion-input>\n  </ion-item>\n  <button ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
+        selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
 ], WelcomePage);
