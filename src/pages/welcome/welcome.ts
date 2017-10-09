@@ -9,15 +9,32 @@ import { HomePage } from '../home/home';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) {
+  authorizedUsers: Map<string, string> = new Map<string, string>();
+  email: string;
+  password: string;
 
+  constructor(public navCtrl: NavController) {
+    this.authorizedUsers.set("admin@frlp.utn.edu.ar", "password1");
+    this.authorizedUsers.set("octavio@gmail.com", "password2");
+    console.log("Fin initialization");
   }
 
   /**
    * Realiza el log in del usuario. Si es exitoso, lo redirige a la HomePage de la aplicación
    * 
    */
-  logIn(event){
-    this.navCtrl.push(HomePage , {})
+  logIn(event) : void {
+    if (this.userIsAuthorized(this.email, this.password)) {
+      this.navCtrl.push(HomePage , {})
+    } else {
+      console.log("Authentication error");
+    }
+  }
+
+  /**
+   * Mocking authentication
+   */
+  userIsAuthorized(email, password) : boolean {
+    return this.authorizedUsers.get(email) === password;
   }
 }
