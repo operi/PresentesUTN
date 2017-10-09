@@ -16,7 +16,6 @@ export class WelcomePage {
   constructor(public navCtrl: NavController) {
     this.authorizedUsers.set("admin@frlp.utn.edu.ar", "password1");
     this.authorizedUsers.set("octavio@gmail.com", "password2");
-    console.log("Fin initialization");
   }
 
   /**
