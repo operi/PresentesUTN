@@ -87,10 +87,9 @@ WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], WelcomePage);
 
-var _a;
 //# sourceMappingURL=welcome.js.map
 
 /***/ }),
