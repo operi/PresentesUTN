@@ -1,3 +1,4 @@
+<ion-nav id="nav" [root]="homePage" #nav swipeBackEnabled="false"></ion-nav>
 <ion-header> 
   <ion-navbar>
     <ion-title>
@@ -8,7 +9,7 @@
 
 <ion-content padding>
   <ion-fab bottom right>
-    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)='goToAgregarPlanilla()'><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

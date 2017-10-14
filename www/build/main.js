@@ -85,7 +85,7 @@ var WelcomePage = (function () {
 }());
 WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
+        selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-nav id="nav" [root]="welcomePage" #nav swipeBackEnabled="false"></ion-nav>\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], WelcomePage);
@@ -101,6 +101,7 @@ WelcomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__agregarPlanilla_agregarPlanilla__ = __webpack_require__(262);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -112,19 +113,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    HomePage.prototype.goToAgregarPlanilla = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__agregarPlanilla_agregarPlanilla__["a" /* AgregarPlanillaPage */], {});
+    };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     MATERIAS \n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n    <button ion-fab><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/'<ion-nav id="nav" [root]="homePage" #nav swipeBackEnabled="false"></ion-nav>\n<ion-header> \n  <ion-navbar>\n    <ion-title>\n     MATERIAS \n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n    <button ion-fab (click)=\'goToAgregarPlanilla()\'><ion-icon name="add"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
 ], HomePage);
 
+var _a;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
@@ -156,12 +162,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_agregarPlanilla_agregarPlanilla__ = __webpack_require__(262);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -180,7 +188,8 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_agregarPlanilla_agregarPlanilla__["a" /* AgregarPlanillaPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -190,7 +199,8 @@ AppModule = __decorate([
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__["a" /* WelcomePage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_agregarPlanilla_agregarPlanilla__["a" /* AgregarPlanillaPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -244,10 +254,46 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
 ], MyApp);
 
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 262:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgregarPlanillaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AgregarPlanillaPage = (function () {
+    function AgregarPlanillaPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return AgregarPlanillaPage;
+}());
+AgregarPlanillaPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'agregarPlanilla',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     AGREGAR PLANILLAS\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  ACÁ AGREGAS PLANILLAS  \n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+], AgregarPlanillaPage);
+
+//# sourceMappingURL=agregarPlanilla.js.map
 
 /***/ })
 
