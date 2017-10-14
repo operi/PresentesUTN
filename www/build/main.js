@@ -288,7 +288,7 @@ var AgregarPlanillaPage = (function () {
 }());
 AgregarPlanillaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'agregarPlanilla',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     AGREGAR PLANILLAS\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  ACÁ AGREGAS PLANILLAS  \n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/
+        selector: 'agregarPlanilla',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     AGREGAR PLANILLA\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  ACÁ AGREGAS PLANILLAS  \n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/agregarPlanilla/agregarPlanilla.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], AgregarPlanillaPage);
