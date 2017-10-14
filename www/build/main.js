@@ -75,8 +75,10 @@ var WelcomePage = (function () {
      * Mocking authentication
      */
     WelcomePage.prototype.userIsAuthorized = function (dni, password) {
-        this.authorizedUsers.set("12345678", "password1");
-        this.authorizedUsers.set("23456789", "password2");
+        this.authorizedUsers.set("angeloraso", "agiles");
+        this.authorizedUsers.set("octavioperi", "agiles");
+        this.authorizedUsers.set("navarromatias", "agiles");
+        this.authorizedUsers.set("sanchezjulieta", "agiles");
         var passwordUser = this.authorizedUsers.get(dni);
         console.log(passwordUser);
         return passwordUser === password;
@@ -85,11 +87,12 @@ var WelcomePage = (function () {
 }());
 WelcomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'welcome',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/welcome/welcome.html"*/
+        selector: 'welcome',template:/*ion-inline-start:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/pages/welcome/welcome.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      PRESENTES UTN\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<form #logInFormCtrl="ngForm" (ngSubmit)="logIn($event)">\n  <ion-item>\n    <ion-input placeholder="Ingrese su DNI" minlength=6 name="dni" [(ngModel)]="dni"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-input type="password" placeholder="Ingrese su contraseña" minlength=6 name="password" [(ngModel)]="password" required></ion-input>\n  </ion-item>\n  <button [disabled]="!logInFormCtrl.form.valid" ion-button block type="submit">Sign In</button>\n</form>\n</ion-content>'/*ion-inline-end:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/pages/welcome/welcome.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
 ], WelcomePage);
 
+var _a;
 //# sourceMappingURL=welcome.js.map
 
 /***/ }),
@@ -120,7 +123,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     HOME PAGE \n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n BIENVENIDO A PRESENTES UTN <br>\n</ion-content>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/pages/home/home.html"*/'<ion-header> \n  <ion-navbar>\n    <ion-title>\n     HOME PAGE \n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n BIENVENIDO A PRESENTES UTN <br>\n</ion-content>\n'/*ion-inline-end:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], HomePage);
@@ -241,7 +244,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/operi/Facultad/Agiles/PresentesUTN/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/operi/Facultad/Agiles/PresentesUTN/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Angelo/Desktop/Proyecto/IONIC/PresentesUTN/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
