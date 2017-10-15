@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Agregar Dia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #nuevoDiaFormCtrl="ngForm" (ngSubmit)="nuevoDia($event)">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input name="clase" type="number" placeholder="Clase"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="dia" type="datetime-local" placeholder="Dia"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  <button [disabled]="!nuevoDiaFormCtrl.form.valid" ion-button block type="submit">Agregar</button>
+
+
+  </form>
+</ion-content>
+
+
