@@ -14,6 +14,8 @@ import { DetalleAsistenciaDiaPage } from '../pages/detalle-asistencia-dia/detall
 import { NuevoAlumnoPage } from '../pages/nuevo-alumno/nuevo-alumno';
 import { NuevoDiaPage } from '../pages/nuevo-dia/nuevo-dia'; 
 import { NuevaPlanillaAsistenciaPage } from '../pages/nueva-planilla-asistencia/nueva-planilla-asistencia';
+import { TomarAsistenciaPage } from '../pages/tomar-asistencia/tomar-asistencia';
+import { FirmarPlanillaPage } from '../pages/firmar-planilla/firmar-planilla';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NuevaPlanillaAsistenciaPage } from '../pages/nueva-planilla-asistencia/
     DetalleAsistenciaDiaPage,
     NuevoAlumnoPage,
     NuevoDiaPage,
-    NuevaPlanillaAsistenciaPage
+    NuevaPlanillaAsistenciaPage,
+    TomarAsistenciaPage,
+    FirmarPlanillaPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { NuevaPlanillaAsistenciaPage } from '../pages/nueva-planilla-asistencia/
     DetalleAsistenciaDiaPage,
     NuevoAlumnoPage,
     NuevoDiaPage,
-    NuevaPlanillaAsistenciaPage
+    NuevaPlanillaAsistenciaPage,
+    TomarAsistenciaPage,
+    FirmarPlanillaPage
   ],
   providers: [
     StatusBar,
