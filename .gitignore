@@ -2,6 +2,7 @@ node_modules/
 temp/
 www/
 .sourcemaps/
+.vscode
 *.DS_Store
 *.log
 *.swp
