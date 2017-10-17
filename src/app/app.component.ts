@@ -28,7 +28,7 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'PresentesUTN', component: HomePage },
+      { title: 'Página Principal', component: HomePage },
       { title: 'Planillas', component: PlanillasAsistenciaPage }      
     ];
   }
