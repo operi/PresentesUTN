@@ -4,10 +4,10 @@ import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 @Component({
-  selector: 'welcome',
-  templateUrl: 'welcome.html'
+  selector: 'login',
+  templateUrl: 'login.html'
 })
-export class WelcomePage {
+export class LoginPage {
 
   authorizedUsers: Map<string, string> = new Map<string, string>();
   dni: string;

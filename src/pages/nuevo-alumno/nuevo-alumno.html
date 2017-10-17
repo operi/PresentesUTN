@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Agregar Alumno</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #nuevoAlumnoFormCtrl="ngForm" (ngSubmit)="nuevoAlumno($event)">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input name="nombre" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="apellido" type="text" placeholder="Apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="ausencias" type="number" placeholder="Hs Ausencias"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Estado</ion-label>
+        <ion-select [(ngModel)]="gaming" name="estado">
+          <ion-option value="AP">Apto Promocion</ion-option>
+          <ion-option value="SP">Regular Sin Promocion</ion-option>
+          <ion-option value="COND">Condicional</ion-option>
+          <ion-option value="PROV">Provisional</ion-option>
+          <ion-option value="LIB">Libre</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  <button [disabled]="!nuevoAlumnoFormCtrl.form.valid" ion-button block type="submit">Agregar</button>
+
+
+  </form>
+</ion-content>
+
+

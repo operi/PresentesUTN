@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Planillas Asistencia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="nuevaPlanilla()"><ion-icon name="logo-buffer"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+
+<ion-content class=" cards-bg">
+
+  <ion-card >
+    <ion-card-content>  
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-11 (click)="verDetallePlanilla()" >
+            <ion-card-title >
+                <ion-icon name="paw" item-start></ion-icon>
+                  Metodologias Agiles (Electiva)
+                  <ion-badge item-end color="secondary">Activa</ion-badge>
+              </ion-card-title>
+            <p>
+              UTN-FRLP: Ingenieria en Sistemas de Informacion<br>
+              Año: 2018
+            </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarPlanilla()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="desactivarPlanilla()"><ion-icon name="warning"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-content> 
+      <ion-grid>
+        <ion-row>
+          <ion-col col-11 (click)="verDetallePlanilla()" >
+            <ion-card-title >
+                <ion-icon name="paw" item-start></ion-icon>
+                  Metodologias Agiles (Electiva)
+                  <ion-badge item-end color="danger">Inctiva</ion-badge>
+              </ion-card-title>
+            <p>
+              UTN-FRLP: Ingenieria en Sistemas de Informacion<br>
+              Año: 2018
+            </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarPlanilla()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="desactivarPlanilla()"><ion-icon name="checkmark-circle"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

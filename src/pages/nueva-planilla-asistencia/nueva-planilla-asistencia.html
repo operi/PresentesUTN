@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Agregar Planilla</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #nuevaPlanillaFormCtrl="ngForm" (ngSubmit)="nuevaPlanilla($event)">
+
+    <ion-list>
+      <ion-item>
+        <ion-input name="materia" type="text" placeholder="Materia"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="docente" type="text" placeholder="Docente a cargo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="auxiliar" type="number" placeholder="Docente"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="año" type="number" placeholder="Año"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="ausenciasMax" type="number" placeholder="Hs Ausencias Permitidas"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="ausenciasPromo" type="number" placeholder="Hs Ausencias Promocion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="autor" type="number" placeholder="Hs Ausencias"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="fechaCreacion" type="number" placeholder="Fecha"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  <button [disabled]="!nuevaPlanillaFormCtrl.form.valid" ion-button block type="submit">Agregar</button>
+
+  </form>
+</ion-content>
+
+

@@ -1,0 +1,164 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalle Planillas Asistencia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="nuevoAlumno()"><ion-icon name="contacts"></ion-icon></button>
+      <button ion-fab (click)="nuevoDia()"><ion-icon name="calendar"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+
+<ion-content class=" cards-bg">
+
+  <ion-card color="custom-blue">
+
+    <ion-card-content color="custom-blue">
+
+      <ion-item color="custom-blue">
+        <h2>Metodologias Agiles</h2>
+          <ion-badge item-end color="secondary">Activa</ion-badge>
+        <p>Año: 2017</p>
+        <p>Creada por: Matias el 14/10/2017 </p>
+      </ion-item>
+
+    <ion-item-divider color="custom-blue">    </ion-item-divider>
+
+    <ion-item color="custom-blue">
+      
+         <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <div>Docentes:</div>
+            </ion-col>
+            <ion-col col-9 >
+              <div>Martin <br>
+                Emi
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-3>
+              <div>Periodo:</div>
+            </ion-col>
+            <ion-col col-9 >
+              <div>2do Cuatrimestre
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-3>
+              <div>Días:</div>
+            </ion-col>
+            <ion-col col-9 >
+              <div>Miercoles de 20:15 a 22:30 <br>
+                Sabados de 9:15 a 11 
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div>Ausencias Permitidas(Hs):</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col offset-3 >
+                <div>6 para cursada <br>
+                  4 para promocion 
+                </div>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="custom-light-blue">
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="verAsistenciaDia()" >
+              <h2>Clase 1</h2>
+              <p>14/10/2017 </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarClase()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="tomarAsistencia()"><ion-icon name="hand"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+  </ion-card>
+
+    <ion-card color="custom-light-blue">
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="verAsistenciaDia()" >
+              <h2>Clase 2</h2>
+              <p>14/10/2017 </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarClase()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="firmarPlanilla()"><ion-icon name="school"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+  </ion-card>
+
+    <ion-card color="custom-light-blue">
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="verAsistenciaDia()" >
+              <h2>Clase 3</h2>
+              <p>14/10/2017 </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarClase()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="firmarPlanilla()"><ion-icon name="school"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+  </ion-card>
+
+  <ion-card color="custom-light-blue">
+      <ion-grid>
+        <ion-row>
+          <ion-col (click)="verAsistenciaDia()" >
+              <h2>Clase 4</h2>
+              <p>14/10/2017 </p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-fab top right>
+              <button ion-fab mini><ion-icon name="more"></ion-icon></button>
+              <ion-fab-list side="left">
+                <button ion-fab (click)="borrarClase()"><ion-icon name="trash"></ion-icon></button>
+                <button ion-fab (click)="firmarPlanilla()"><ion-icon name="school"></ion-icon></button>
+              </ion-fab-list>
+            </ion-fab>
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+  </ion-card>
+
+</ion-content>

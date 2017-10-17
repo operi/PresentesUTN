@@ -1,11 +1,17 @@
-<ion-header> 
+<ion-header>
   <ion-navbar>
-    <ion-title>
-     HOME PAGE 
-    </ion-title>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>HOME PAGE</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
  BIENVENIDO A PRESENTES UTN <br>
+
+   <p>
+    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+  </p>
+  
 </ion-content>
