@@ -32,10 +32,10 @@ export class WelcomePage {
    * Mocking authentication
    */
   userIsAuthorized(dni, password) : boolean {
-    this.authorizedUsers.set("angeloraso", "agiles");
-    this.authorizedUsers.set("octavioperi", "agiles");
-    this.authorizedUsers.set("navarromatias", "agiles");
-    this.authorizedUsers.set("sanchezjulieta", "agiles");
+    this.authorizedUsers.set("38000000", "agiles");
+    this.authorizedUsers.set("39000000", "agiles");
+    this.authorizedUsers.set("40000000", "agiles");
+    this.authorizedUsers.set("50000000", "agiles");
     let passwordUser =  this.authorizedUsers.get(dni);
     console.log(passwordUser);
     return passwordUser === password;
