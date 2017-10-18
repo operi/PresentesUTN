@@ -26,10 +26,10 @@
     <ion-card-content color="custom-blue">
 
       <ion-item color="custom-blue">
-        <h2>Metodologias Agiles</h2>
-          <ion-badge item-end color="secondary">Activa</ion-badge>
-        <p>Año: 2017</p>
-        <p>Creada por: Matias el 14/10/2017 </p>
+        <h2>{{planillaAsistencia.nombre}}</h2>
+          <!--<ion-badge item-end color="secondary">Activa</ion-badge>-->
+        <p>Anio Cursada: {{planillaAsistencia.anioCursada}}</p>
+        <p>Creada por: {{planillaAsistencia.usuarioCreador}} el {{planillaAsistencia.fechaCreacionPlanilla}} </p>
       </ion-item>
 
     <ion-item-divider color="custom-blue">    </ion-item-divider>
@@ -42,9 +42,9 @@
               <div>Docentes:</div>
             </ion-col>
             <ion-col col-9 >
-              <div>Martin <br>
-                Emi
-              </div>
+              <br>
+              <p>{{planillaAsistencia.docenteACargo}}, {{planillaAsistencia.docenteAuxiliar}}
+              </p>
             </ion-col>
           </ion-row>
 
@@ -53,8 +53,9 @@
               <div>Periodo:</div>
             </ion-col>
             <ion-col col-9 >
-              <div>2do Cuatrimestre
-              </div>
+                <br>
+              <p>{{planillaAsistencia.cuatrimestre}} Cuatrimestre
+              </p>
             </ion-col>
           </ion-row>
 
@@ -63,9 +64,9 @@
               <div>Días:</div>
             </ion-col>
             <ion-col col-9 >
-              <div>Miercoles de 20:15 a 22:30 <br>
-                Sabados de 9:15 a 11 
-              </div>
+              <br>
+              <p>{{planillaAsistencia.diaCursada}} 
+              </p>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -75,9 +76,9 @@
           </ion-row>
           <ion-row>
             <ion-col offset-3 >
-                <div>6 para cursada <br>
-                  4 para promocion 
-                </div>
+                <p>{{planillaAsistencia.horasAusenciaMaximasCursada}} para cursada <br>
+                  {{planillaAsistencia.horasAusenciaMaximaPromocion}} para promocion 
+                </p>
               </ion-col>
           </ion-row>
         </ion-grid>

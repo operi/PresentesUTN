@@ -6,23 +6,26 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { PlanillasAsistenciaPage } from '../pages/planillas-asistencia/planillas-asistencia';
-
+import { PlanillaService } from './services/planilla.service';
+import { PlanillaAsistencia} from './model/planilla-asistencia';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [PlanillaService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
   rootPage = LoginPage;
   pages: Array<{title: string, component: any}>;
+  planillas: Array<PlanillaAsistencia>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    private planillaService: PlanillaService
   ) {
     this.initializeApp();
 

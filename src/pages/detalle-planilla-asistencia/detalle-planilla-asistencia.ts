@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
+
 import { DetalleAsistenciaDiaPage } from '../../pages/detalle-asistencia-dia/detalle-asistencia-dia';
 import { NuevoAlumnoPage } from '../../pages/nuevo-alumno/nuevo-alumno';
 import { NuevoDiaPage } from '../../pages/nuevo-dia/nuevo-dia'; 
 import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistencia';
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
+import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
 
 
 @Component({
@@ -12,8 +15,12 @@ import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla'
 })
 export class DetallePlanillaAsistenciaPage { 
 
+  planillaAsistencia: PlanillaAsistencia;
+  data: Object;
 	constructor(
-		public navCtrl: NavController) {
+    public navCtrl: NavController,
+    private navParams: NavParams) {
+      this.planillaAsistencia = navParams.get('planillaAsistencia');
   }
 
 	verAsistenciaDia() : void {
