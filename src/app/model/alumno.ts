@@ -16,4 +16,8 @@ export class Alumno {
       this.cantidadAusencias = cantidadAusencias;
       this.estado = estado;
   }
+
+  getLegajo() {
+    return this.legajo;
+  }
 }

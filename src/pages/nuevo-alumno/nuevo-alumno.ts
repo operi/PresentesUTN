@@ -16,7 +16,7 @@ export class NuevoAlumnoPage {
   legajo:string;
   apellido:string;
   ausencias:string;
-  estado:EstadoAlumno;
+  estado:string;
   planillaId: number;
 
   constructor(public navCtrl: NavController,
@@ -24,7 +24,8 @@ export class NuevoAlumnoPage {
   }
 
   nuevoAlumno(event) : void {
-    var alumno: Alumno = new Alumno(this.legajo, this.nombre, this.apellido, this.ausencias, this.estado)  
+    var estado: EstadoAlumno = new EstadoAlumno(this.estado);
+    var alumno: Alumno = new Alumno(this.legajo, this.nombre, this.apellido, this.ausencias, estado);  
     this.planillaService.addAlumnoToPlanilla(this.planillaId, alumno);
     this.navCtrl.pop();
   } 

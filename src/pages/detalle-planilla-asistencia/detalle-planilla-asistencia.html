@@ -81,6 +81,16 @@
                 </p>
               </ion-col>
           </ion-row>
+          <ion-row>
+            <ion-col>
+              <div>Alumnos:</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col offset-3 >
+                  <li *ngFor="let alumno of planillaAsistencia.alumnos">{{alumno.nombre}} <b>Estado</b>: {{alumno.estado}}</li> 
+              </ion-col>
+          </ion-row>
         </ion-grid>
       </ion-item>
     </ion-card-content>

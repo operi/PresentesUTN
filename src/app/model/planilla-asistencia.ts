@@ -44,4 +44,8 @@ export class PlanillaAsistencia {
   public addAlumno(alumno: Alumno) {
     this.alumnos.push(alumno);
   }
+
+  public getAlumnos() {
+    return this.alumnos;
+  }
 }

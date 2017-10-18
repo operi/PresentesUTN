@@ -11,7 +11,7 @@ export class PlanillaService {
   constructor() {
     var alumno1: Alumno = new Alumno('25253', 'Navarro', 'Matias', '0', EstadoAlumno.APTO_PROMOCION);
     var alumno2: Alumno = new Alumno('25251', 'Sanchez', 'Julieta', '0', EstadoAlumno.APTO_PROMOCION);
-    var alumno3: Alumno = new Alumno('25252', 'Octavio', 'Peri', '0', EstadoAlumno.APTO_PROMOCION);
+    var alumno3: Alumno = new Alumno('25252', 'Peri', 'Octavio', '0', EstadoAlumno.APTO_PROMOCION);
     var alumno4: Alumno = new Alumno('25254', 'Raso', 'Angelo', '0', EstadoAlumno.APTO_PROMOCION);
     
     var lista1: Array<Alumno> = new Array<Alumno>();
@@ -51,7 +51,13 @@ export class PlanillaService {
     //planilla will have only one element
     var planilla: Array<PlanillaAsistencia> = this.planillas.splice(planillaId,1);
     var onePlanilla: PlanillaAsistencia = planilla.pop();
-    onePlanilla.addAlumno(alumno)
+
+    var alumno: Alumno = onePlanilla.getAlumnos().find(element => element.getLegajo() === alumno.getLegajo());
+    if (alumno !== undefined) {
+      alert("El alumno ya esta agregado");
+      return;
+    }
+    onePlanilla.addAlumno(alumno);
     this.planillas.push(onePlanilla);
   }
 }
