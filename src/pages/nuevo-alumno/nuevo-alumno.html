@@ -14,26 +14,30 @@
     <ion-list>
 
       <ion-item>
-        <ion-input name="nombre" type="text" placeholder="Nombre"></ion-input>
+        <ion-input name="nombre" type="text" placeholder="Nombre" [(ngModel)]="nombre"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="apellido" type="text" placeholder="Apellido"></ion-input>
+        <ion-input name="apellido" type="text" placeholder="Apellido" [(ngModel)]="apellido"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="ausencias" type="number" placeholder="Hs Ausencias"></ion-input>
+        <ion-input name="legajo" type="text" placeholder="Legajo" [(ngModel)]="legajo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="ausencias" type="text" placeholder="Hs Ausencias" [(ngModel)]="ausencias"></ion-input>
       </ion-item>
 
 
       <ion-item>
         <ion-label>Estado</ion-label>
-        <ion-select [(ngModel)]="gaming" name="estado">
-          <ion-option value="AP">Apto Promocion</ion-option>
-          <ion-option value="SP">Regular Sin Promocion</ion-option>
-          <ion-option value="COND">Condicional</ion-option>
-          <ion-option value="PROV">Provisional</ion-option>
-          <ion-option value="LIB">Libre</ion-option>
+        <ion-select [(ngModel)]="estado" name="estado">
+          <ion-option value="APTO_PROMOCION">Apto Promocion</ion-option>
+          <ion-option value="REGULAR_SIN_PROMOCION">Regular Sin Promocion</ion-option>
+          <ion-option value="CONDICIONAL">Condicional</ion-option>
+          <ion-option value="PROVISIONAL">Provisional</ion-option>
+          <ion-option value="LIBRE">Libre</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>

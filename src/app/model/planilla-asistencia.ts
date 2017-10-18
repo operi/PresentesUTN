@@ -1,3 +1,5 @@
+import { Alumno } from './alumno';
+
 export class PlanillaAsistencia {
   id: number;
   nombre: string;
@@ -15,10 +17,11 @@ export class PlanillaAsistencia {
   horasAusenciaMaximaPromocion: string;
   usuarioCreador: string;
   fechaCreacionPlanilla: Date;
+  alumnos: Array<Alumno>;
 
   constructor(nombre: string, docenteACargo: string, docenteAuxiliar: string, anioCursada: string, diaCursada: string,
     cuatrimestre: string, horasPorAusencia: string, horasMateria: string, horasAusenciaMaximasCursada: string, 
-    horasAusenciaMaximaPromocion: string, usuarioCreador: string, fechaCreacionPlanilla: Date) {
+    horasAusenciaMaximaPromocion: string, usuarioCreador: string, fechaCreacionPlanilla: Date, alumnos: Array<Alumno>) {
       this.nombre = nombre;
       this.docenteACargo = docenteACargo;
       this.docenteAuxiliar = docenteAuxiliar;
@@ -31,9 +34,14 @@ export class PlanillaAsistencia {
       this.horasAusenciaMaximaPromocion = horasAusenciaMaximaPromocion;
       this.usuarioCreador = usuarioCreador;
       this.fechaCreacionPlanilla = fechaCreacionPlanilla;
+      this.alumnos = alumnos;
     }
 
   public setId(id: number) {
     this.id = id;
+  }
+
+  public addAlumno(alumno: Alumno) {
+    this.alumnos.push(alumno);
   }
 }

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { PlanillaService } from '../../app/services/planilla.service';
+import { Alumno } from '../../app/model/alumno';
+import { EstadoAlumno } from '../../app/model/enum-estado-alumno';
+import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
+
 
 @Component({
   selector: 'nuevo-alumno',
@@ -9,15 +14,20 @@ import { NavController } from 'ionic-angular';
 export class NuevoAlumnoPage {
   
   nombre:string;
+  legajo:string;
   apellido:string;
-  ausencias:number;
-  estado:string;
+  ausencias:string;
+  estado:EstadoAlumno;
+  planillaId: number;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              private planillaService: PlanillaService) {
   }
 
   nuevoAlumno(event) : void {
-      this.navCtrl.pop()
+    var alumno: Alumno = new Alumno(this.legajo, this.nombre, this.apellido, this.ausencias, this.estado)  
+    this.planillaService.addAlumnoToPlanilla(this.planillaId, alumno);
+    var planillas: Promise<Array<PlanillaAsistencia>> = this.planillaService.getPlanillas();
   } 
 
 }

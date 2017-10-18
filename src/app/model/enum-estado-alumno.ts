@@ -1,0 +1,7 @@
+export enum EstadoAlumno {
+  APTO_PROMOCION,
+  REGULAR_SIN_PROMOCION,
+  CONDICIONAL,
+  PROVISIONAL,
+  LIBRE
+}

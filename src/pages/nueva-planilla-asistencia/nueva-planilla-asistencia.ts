@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
 import { PlanillaService } from '../../app/services/planilla.service';
+import { Alumno } from '../../app/model/alumno';
 
 @Component({
   selector: 'nueva-planilla-asistencia',
@@ -31,7 +32,7 @@ export class NuevaPlanillaAsistenciaPage {
   nuevaPlanilla(event) : void {
       this.planilla = new PlanillaAsistencia(this.nombreMateria, this.docenteACargo, this.docenteAuxiliar,
           this.anio, this.diaCursada, this.cuatrimestre, this.horasPorAusencia, this.horasMateria,
-          this.horasAusenciaMaximasCursada, this.horasAusenciaMaximaPromocion, "admin", this.fechaCreacion);
+          this.horasAusenciaMaximasCursada, this.horasAusenciaMaximaPromocion, "admin", this.fechaCreacion, new Array<Alumno>());
       this.planillaService.addPlanilla(this.planilla);
       this.navCtrl.pop();
   } 
