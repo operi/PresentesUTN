@@ -13,47 +13,47 @@
 
     <ion-list>
       <ion-item>
-        <ion-input name="nombreMateria" type="text" placeholder="Materia" [(ngModel)]="nombreMateria"></ion-input>
+        <ion-input name="nombreMateria" type="text" placeholder="Materia" [(ngModel)]="nombreMateria" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="docenteACargo" type="text" placeholder="Docente a cargo" [(ngModel)]="docenteACargo"></ion-input>
+        <ion-input name="docenteACargo" type="text" placeholder="Docente a cargo" [(ngModel)]="docenteACargo" required></ion-input>
       </ion-item>
 
 
       <ion-item>
-        <ion-input name="docenteAuxiliar" type="text" placeholder="Docente Auxiliar" [(ngModel)]="docenteAuxiliar"></ion-input>
+        <ion-input name="docenteAuxiliar" type="text" placeholder="Docente Auxiliar" [(ngModel)]="docenteAuxiliar" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="anio" type="text" placeholder="Año" [(ngModel)]="anio"></ion-input>
+        <ion-input name="anio" type="text" placeholder="Año" [(ngModel)]="anio" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="cuatrimestre" type="text" placeholder="Cuatrimestre" [(ngModel)]="cuatrimestre"></ion-input>
+        <ion-input name="cuatrimestre" type="text" placeholder="Cuatrimestre" [(ngModel)]="cuatrimestre" required></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-input name="horasMateria" type="text" placeholder="Horas de la Materia" [(ngModel)]="horasMateria"></ion-input>
+        <ion-input name="horasMateria" type="text" placeholder="Horas de la Materia" [(ngModel)]="horasMateria" required></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-input name="diaCursada" type="text" placeholder="Dia Cursada" [(ngModel)]="diaCursada"></ion-input>
+        <ion-input name="diaCursada" type="text" placeholder="Dia Cursada" [(ngModel)]="diaCursada" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="horasAusenciaMaximasCursada" type="text" placeholder="Hs Ausencias Permitidas" [(ngModel)]="horasAusenciaMaximasCursada"></ion-input>
+        <ion-input name="horasAusenciaMaximasCursada" type="text" placeholder="Hs Ausencias Permitidas" [(ngModel)]="horasAusenciaMaximasCursada" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="horasAusenciaMaximaPromocion" type="text" placeholder="Hs Ausencias Promocion" [(ngModel)]="horasAusenciaMaximaPromocion"></ion-input>
+        <ion-input name="horasAusenciaMaximaPromocion" type="text" placeholder="Hs Ausencias Promocion" [(ngModel)]="horasAusenciaMaximaPromocion" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input name="horasPorAusencia" type="text" placeholder="Hs Por Ausencias" [(ngModel)]="horasPorAusencia"></ion-input>
+        <ion-input name="horasPorAusencia" type="text" placeholder="Hs Por Ausencias" [(ngModel)]="horasPorAusencia" required></ion-input>
       </ion-item>
     </ion-list>
-  <button [disabled]="!nuevaPlanillaFormCtrl.form.valid" ion-button block type="submit">Agregar</button>
+  <button [disabled]="!nuevaPlanillaFormCtrl.form.valid" ion-button block type="submit" required>Agregar</button>
 
   </form>
 </ion-content>
