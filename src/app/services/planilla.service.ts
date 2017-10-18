@@ -52,8 +52,8 @@ export class PlanillaService {
     var planilla: Array<PlanillaAsistencia> = this.planillas.splice(planillaId,1);
     var onePlanilla: PlanillaAsistencia = planilla.pop();
 
-    var alumno: Alumno = onePlanilla.getAlumnos().find(element => element.getLegajo() === alumno.getLegajo());
-    if (alumno !== undefined) {
+    var alumnoInList: Alumno = onePlanilla.getAlumnos().find(element => element.getLegajo() === alumno.getLegajo());
+    if (alumnoInList !== undefined) {
       alert("El alumno ya esta agregado");
       return;
     }
