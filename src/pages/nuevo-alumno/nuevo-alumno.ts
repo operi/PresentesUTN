@@ -4,7 +4,6 @@ import { NavController } from 'ionic-angular';
 import { PlanillaService } from '../../app/services/planilla.service';
 import { Alumno } from '../../app/model/alumno';
 import { EstadoAlumno } from '../../app/model/enum-estado-alumno';
-import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
 
 
 @Component({
@@ -27,7 +26,7 @@ export class NuevoAlumnoPage {
   nuevoAlumno(event) : void {
     var alumno: Alumno = new Alumno(this.legajo, this.nombre, this.apellido, this.ausencias, this.estado)  
     this.planillaService.addAlumnoToPlanilla(this.planillaId, alumno);
-    var planillas: Promise<Array<PlanillaAsistencia>> = this.planillaService.getPlanillas();
+    this.navCtrl.pop();
   } 
 
 }
