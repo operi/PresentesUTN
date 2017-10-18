@@ -25,6 +25,10 @@ export class PlanillasAsistenciaPage {
 		this.navCtrl.push(NuevaPlanillaAsistenciaPage, {})
 	}
 
+	borrarPlanilla(id): void {
+		this.planillaService.removePlanilla(id);
+	}
+
 	ngOnInit(): void {
 		this.planillaService.getPlanillas().then(
 			// when promise resolves correctly

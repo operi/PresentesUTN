@@ -1,4 +1,5 @@
 export class PlanillaAsistencia {
+  id: number;
   nombre: string;
   docenteACargo: string;
   docenteAuxiliar: string;
@@ -31,4 +32,8 @@ export class PlanillaAsistencia {
       this.usuarioCreador = usuarioCreador;
       this.fechaCreacionPlanilla = fechaCreacionPlanilla;
     }
+
+  public setId(id: number) {
+    this.id = id;
+  }
 }
