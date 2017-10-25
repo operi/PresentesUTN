@@ -9,10 +9,10 @@ export class PlanillaService {
   planillas: Array<PlanillaAsistencia>;
   alumno1;
   constructor() {
-    var alumno1: Alumno = new Alumno('25253', 'Navarro', 'Matias', '0', EstadoAlumno.APTO_PROMOCION);
-    var alumno2: Alumno = new Alumno('25251', 'Sanchez', 'Julieta', '0', EstadoAlumno.APTO_PROMOCION);
-    var alumno3: Alumno = new Alumno('25252', 'Peri', 'Octavio', '0', EstadoAlumno.APTO_PROMOCION);
-    var alumno4: Alumno = new Alumno('25254', 'Raso', 'Angelo', '0', EstadoAlumno.APTO_PROMOCION);
+    var alumno1: Alumno = new Alumno('25253', 'Matias','Navarro', '0', EstadoAlumno.APTO_PROMOCION);
+    var alumno2: Alumno = new Alumno('25251', 'Julieta', 'Sanchez', '0', EstadoAlumno.APTO_PROMOCION);
+    var alumno3: Alumno = new Alumno('25252', 'Octavio', 'Peri', '0', EstadoAlumno.APTO_PROMOCION);
+    var alumno4: Alumno = new Alumno('25254', 'Angelo', 'Raso', '0', EstadoAlumno.APTO_PROMOCION);
     
     var lista1: Array<Alumno> = new Array<Alumno>();
     lista1.push(alumno1);
@@ -46,18 +46,19 @@ export class PlanillaService {
   }
 
   addAlumnoToPlanilla(planillaId: number, alumno: Alumno) {
-    // horrible hack will come, beware
+    var planilla: PlanillaAsistencia = this.planillas.find(element => element.getId() === planillaId);
+    if (planilla === undefined) {
+      alert("No existe la planilla");
+      return;
+    }
 
-    //planilla will have only one element
-    var planilla: Array<PlanillaAsistencia> = this.planillas.splice(planillaId,1);
-    var onePlanilla: PlanillaAsistencia = planilla.pop();
-
-    var alumnoInList: Alumno = onePlanilla.getAlumnos().find(element => element.getLegajo() === alumno.getLegajo());
+    var alumnoInList: Alumno = planilla.getAlumnos().find(element => element.getLegajo() === alumno.getLegajo());
     if (alumnoInList !== undefined) {
       alert("El alumno ya esta agregado");
       return;
     }
-    onePlanilla.addAlumno(alumno);
-    this.planillas.push(onePlanilla);
+    planilla.addAlumno(alumno);
+    this.planillas.push(planilla);
   }
+
 }
