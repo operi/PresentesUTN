@@ -8,6 +8,7 @@ import { NuevoDiaPage } from '../../pages/nuevo-dia/nuevo-dia';
 import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistencia';
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
+import { PlanillaService } from '../../app/services/planilla.service';
 
 
 @Component({
@@ -17,14 +18,16 @@ export class DetallePlanillaAsistenciaPage {
 
   planillaAsistencia: PlanillaAsistencia;
   data: Object;
+  legajo: string;
 	constructor(
     public navCtrl: NavController,
-    private navParams: NavParams) {
+    public navParams: NavParams,
+    public planillaService: PlanillaService) {
       this.planillaAsistencia = navParams.get('planillaAsistencia');
   }
 
 	verAsistenciaDia() : void {
-		this.navCtrl.push(DetalleAsistenciaDiaPage , {})    
+		this.navCtrl.push(DetalleAsistenciaDiaPage , {alumnos: this.planillaAsistencia.alumnos})
   }
 
   	nuevoAlumno() : void {
@@ -41,6 +44,10 @@ export class DetallePlanillaAsistenciaPage {
 
     firmarPlanilla() : void {
     this.navCtrl.push(FirmarPlanillaPage , {})    
+  }
+
+  borrarAlumno(legajo: string): void {
+    alert('legajo:' + legajo);
   }
 
 }
