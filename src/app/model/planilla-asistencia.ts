@@ -41,6 +41,10 @@ export class PlanillaAsistencia {
     this.id = id;
   }
 
+  public getId() {
+    return this.id;
+  }
+
   public addAlumno(alumno: Alumno) {
     this.alumnos.push(alumno);
   }
