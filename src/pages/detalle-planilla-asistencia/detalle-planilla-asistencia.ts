@@ -9,6 +9,7 @@ import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistenc
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
 import { PlanillaService } from '../../app/services/planilla.service';
+import { Alumno } from '../../app/model/alumno';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class DetallePlanillaAsistenciaPage {
   }
 
 	verAsistenciaDia() : void {
-		this.navCtrl.push(DetalleAsistenciaDiaPage , {alumnos: this.planillaAsistencia.alumnos})
+		this.navCtrl.push(DetalleAsistenciaDiaPage , {alumnos: this.planillaAsistencia.getAlumnos()})
   }
 
   	nuevoAlumno() : void {
@@ -47,7 +48,7 @@ export class DetallePlanillaAsistenciaPage {
   }
 
   borrarAlumno(legajo: string): void {
-    alert('legajo:' + legajo);
+    this.planillaAsistencia.removeAlumno(legajo);
   }
 
 }
