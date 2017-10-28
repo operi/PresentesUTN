@@ -1,23 +1,23 @@
 import { Alumno } from './alumno';
 
 export class PlanillaAsistencia {
-  id: number;
-  nombre: string;
-  docenteACargo: string;
-  docenteAuxiliar: string;
-  anioCursada: string;
-  diaCursada: string;
-  cuatrimestre: string;
-  // cantidad de horas que se computaran por cada falta
-  horasPorAusencia: string;
-  horasMateria: string;
+  private id: number;
+  private nombre: string;
+  private docenteACargo: string;
+  private docenteAuxiliar: string;
+  private anioCursada: string;
+  private diaCursada: string;
+  private cuatrimestre: string;
+  private private // cantidad de horas que se computaran por cada falta
+  private horasPorAusencia: string;
+  private horasMateria: string;
   // 80% horasMateria
-  horasAusenciaMaximasCursada: string;
+  private horasAusenciaMaximasCursada: string;
   // 75% horasMateria
-  horasAusenciaMaximaPromocion: string;
-  usuarioCreador: string;
-  fechaCreacionPlanilla: Date;
-  alumnos: Array<Alumno>;
+  private horasAusenciaMaximaPromocion: string;
+  private usuarioCreador: string;
+  private fechaCreacionPlanilla: Date;
+  private alumnos: Array<Alumno>;
 
   constructor(nombre: string, docenteACargo: string, docenteAuxiliar: string, anioCursada: string, diaCursada: string,
     cuatrimestre: string, horasPorAusencia: string, horasMateria: string, horasAusenciaMaximasCursada: string, 
@@ -47,6 +47,15 @@ export class PlanillaAsistencia {
 
   public addAlumno(alumno: Alumno) {
     this.alumnos.push(alumno);
+  }
+
+  public setAlumnos(alumnos: Array<Alumno>) {
+    this.alumnos = alumnos;
+  }
+
+  public removeAlumno(legajo: string) {
+    var alumnos: Array<Alumno> = this.getAlumnos().filter(element => element.getLegajo() !== legajo)
+    this.setAlumnos(alumnos);
   }
 
   public getAlumnos() {
