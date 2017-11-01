@@ -9,7 +9,6 @@ import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistenc
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
 import { PlanillaService } from '../../app/services/planilla.service';
-import { Alumno } from '../../app/model/alumno';
 
 
 @Component({
