@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { PlanillaService } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/planilla.service';
 import { Alumno } from '../../app/model/alumno';
 import { EstadoAlumno } from '../../app/model/enum-estado-alumno';
 
@@ -20,7 +20,7 @@ export class NuevoAlumnoPage {
   planillaId: number;
 
   constructor(public navCtrl: NavController,
-              private planillaService: PlanillaService) {
+              private planillaService: Service) {
   }
 
   nuevoAlumno(event) : void {

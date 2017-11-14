@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DetallePlanillaAsistenciaPage } from '../../pages/detalle-planilla-asistencia/detalle-planilla-asistencia';
 import { NuevaPlanillaAsistenciaPage } from '../../pages/nueva-planilla-asistencia/nueva-planilla-asistencia';
-import { PlanillaService } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/planilla.service';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
+import { Docente } from '../../app/model/docente';
 
 @Component({
 	templateUrl: 'planillas-asistencia.html'
@@ -14,7 +15,7 @@ export class PlanillasAsistenciaPage {
 
 	constructor(
 		public navCtrl: NavController,
-		private planillaService: PlanillaService) {
+		private service: Service) {
 	}
 
 	verDetallePlanilla(event, planilla): void {
@@ -26,11 +27,12 @@ export class PlanillasAsistenciaPage {
 	}
 
 	borrarPlanilla(id): void {
-		this.planillaService.removePlanilla(id);
+		this.service.removePlanilla(id);
 	}
 
 	ngOnInit(): void {
-		this.planillaService.getPlanillas().then(
+		var docente: Docente = this.service.getLoggedDocente();
+		this.service.getPlanillasForDocente(docente.id).then(
 			// when promise resolves correctly
 			(planillas) => this.planillas = planillas,
 			// when promise fails

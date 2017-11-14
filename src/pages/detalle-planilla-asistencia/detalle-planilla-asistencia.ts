@@ -8,7 +8,7 @@ import { NuevoDiaPage } from '../../pages/nuevo-dia/nuevo-dia';
 import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistencia';
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
-import { PlanillaService } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/planilla.service';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class DetallePlanillaAsistenciaPage {
 	constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public planillaService: PlanillaService) {
+    public planillaService: Service) {
       this.planillaAsistencia = navParams.get('planillaAsistencia');
   }
 

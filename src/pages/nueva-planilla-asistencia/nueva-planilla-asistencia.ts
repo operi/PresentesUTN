@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
-import { PlanillaService } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/planilla.service';
 import { Alumno } from '../../app/model/alumno';
+import { Docente } from '../../app/model/docente';
 
 @Component({
   selector: 'nueva-planilla-asistencia',
@@ -12,8 +13,8 @@ import { Alumno } from '../../app/model/alumno';
 export class NuevaPlanillaAsistenciaPage {
   
   nombreMateria:string;
-  docenteACargo:string;
-  docenteAuxiliar:string;
+  docenteACargo:Docente;
+  docenteAuxiliar:Docente;
   anio:string;
   horasMateria:string;
   diaCursada:string;
@@ -26,7 +27,7 @@ export class NuevaPlanillaAsistenciaPage {
   planilla: PlanillaAsistencia;
 
   constructor(public navCtrl: NavController, 
-              private planillaService: PlanillaService) {
+              private planillaService: Service) {
   }
 
   nuevaPlanilla(event) : void {

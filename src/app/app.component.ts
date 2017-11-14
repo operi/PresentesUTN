@@ -5,12 +5,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { PlanillasAsistenciaPage } from '../pages/planillas-asistencia/planillas-asistencia';
-import { PlanillaService } from './services/planilla.service';
+import { Service } from './services/planilla.service';
 import { PlanillaAsistencia} from './model/planilla-asistencia';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [PlanillaService]
+  providers: [Service]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

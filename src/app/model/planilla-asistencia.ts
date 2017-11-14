@@ -1,10 +1,10 @@
 import { Alumno } from './alumno';
-
+import { Docente } from './docente';
 export class PlanillaAsistencia {
   private id: number;
   private nombre: string;
-  private docenteACargo: string;
-  private docenteAuxiliar: string;
+  private docenteACargo: Docente;
+  private docenteAuxiliar: Docente;
   private anioCursada: string;
   private diaCursada: string;
   private cuatrimestre: string;
@@ -19,7 +19,7 @@ export class PlanillaAsistencia {
   private fechaCreacionPlanilla: Date;
   private alumnos: Array<Alumno>;
 
-  constructor(nombre: string, docenteACargo: string, docenteAuxiliar: string, anioCursada: string, diaCursada: string,
+  constructor(nombre: string, docenteACargo: Docente, docenteAuxiliar: Docente, anioCursada: string, diaCursada: string,
     cuatrimestre: string, horasPorAusencia: string, horasMateria: string, horasAusenciaMaximasCursada: string, 
     horasAusenciaMaximaPromocion: string, usuarioCreador: string, fechaCreacionPlanilla: Date, alumnos: Array<Alumno>) {
       this.nombre = nombre;
@@ -60,5 +60,13 @@ export class PlanillaAsistencia {
 
   public getAlumnos() {
     return this.alumnos;
+  }
+
+  public getDocenteACargo() {
+    return this.docenteACargo;
+  }
+
+  public getDocenteAuxiliar() {
+    return this.docenteAuxiliar;
   }
 }

@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { Docente } from '../../app/model/docente';
+import { Service } from '../../app/services/planilla.service';
 
 @Component({
   selector: 'login',
@@ -14,7 +15,7 @@ export class LoginPage {
   dni: string;
   password: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public service: Service) {
     this.authorizedUsers.set("38000000-agiles", new Docente(1, "38000000", "Nombre 1", "Apellido 1"));
     this.authorizedUsers.set("39000000-agiles", new Docente(2, "39000000", "Nombre 2", "Apellido 2"));
     this.authorizedUsers.set("40000000-agiles", new Docente(3, "40000000", "Nombre 3", "Apellido 3"));
@@ -28,7 +29,9 @@ export class LoginPage {
   logIn(event) : void {
     let docente: Docente = this.userIsAuthorized(this.dni, this.password);
     if (docente) {
-      this.navCtrl.push(HomePage , {docente: docente});
+      console.log(docente);
+      this.service.setLoggedDocente(docente);
+      this.navCtrl.push(HomePage);
     } else {
       alert("Authentication error");
     }
