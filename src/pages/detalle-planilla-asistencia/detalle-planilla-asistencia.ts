@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 
 import { DetalleAsistenciaDiaPage } from '../../pages/detalle-asistencia-dia/detalle-asistencia-dia';
 import { NuevoAlumnoPage } from '../../pages/nuevo-alumno/nuevo-alumno';
@@ -22,7 +23,8 @@ export class DetallePlanillaAsistenciaPage {
 	constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public planillaService: Service) {
+    public service: Service,
+    private alertCtrl: AlertController) {
       this.planillaAsistencia = navParams.get('planillaAsistencia');
   }
 
@@ -47,7 +49,25 @@ export class DetallePlanillaAsistenciaPage {
   }
 
   borrarAlumno(legajo: string): void {
-    this.planillaAsistencia.removeAlumno(legajo);
+    let alert = this.alertCtrl.create({
+      title: 'Confirmar eliminación',
+      message: '¿Está seguro de querer borrar este alumno?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+          }
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            this.planillaAsistencia.removeAlumno(legajo);
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
