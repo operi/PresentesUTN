@@ -32,20 +32,21 @@ export class DetallePlanillaAsistenciaPage {
 		this.navCtrl.push(DetalleAsistenciaDiaPage , {alumnos: this.planillaAsistencia.getAlumnos()})
   }
 
-  	nuevoAlumno() : void {
-		this.navCtrl.push(NuevoAlumnoPage , {})    
+  nuevoAlumno() : void {
+    this.navCtrl.push(NuevoAlumnoPage , {})    
   }
 
-  	nuevoDia() : void {
-		this.navCtrl.push(NuevoDiaPage , {})    
+  nuevoDia() : void {
+    this.navCtrl.push(NuevoDiaPage , {})    
   }
 
-    tomarAsistencia() : void {
+  tomarAsistencia() : void {
     this.navCtrl.push(TomarAsistenciaPage , {})    
   }
 
-    firmarPlanilla() : void {
-    this.navCtrl.push(FirmarPlanillaPage , {})    
+  firmarPlanilla(fecha: string) : void {
+    console.log(this.planillaAsistencia);
+    this.navCtrl.push(FirmarPlanillaPage , {"planillaId": this.planillaAsistencia.getId(), "fecha": fecha })    
   }
 
   borrarAlumno(legajo: string): void {

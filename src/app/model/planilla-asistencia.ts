@@ -19,9 +19,10 @@ export class PlanillaAsistencia {
   private fechaCreacionPlanilla: Date;
   private alumnos: Array<Alumno>;
 
-  constructor(nombre: string, docenteACargo: Docente, docenteAuxiliar: Docente, anioCursada: string, diaCursada: string,
+  constructor(id:number ,nombre: string, docenteACargo: Docente, docenteAuxiliar: Docente, anioCursada: string, diaCursada: string,
     cuatrimestre: string, horasPorAusencia: string, horasMateria: string, horasAusenciaMaximasCursada: string, 
     horasAusenciaMaximaPromocion: string, usuarioCreador: string, fechaCreacionPlanilla: Date, alumnos: Array<Alumno>) {
+      this.id = id;
       this.nombre = nombre;
       this.docenteACargo = docenteACargo;
       this.docenteAuxiliar = docenteAuxiliar;

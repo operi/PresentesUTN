@@ -31,7 +31,7 @@ export class NuevaPlanillaAsistenciaPage {
   }
 
   nuevaPlanilla(event) : void {
-      this.planilla = new PlanillaAsistencia(this.nombreMateria, this.docenteACargo, this.docenteAuxiliar,
+      this.planilla = new PlanillaAsistencia(this.planillaService.planillas.length ,this.nombreMateria, this.docenteACargo, this.docenteAuxiliar,
           this.anio, this.diaCursada, this.cuatrimestre, this.horasPorAusencia, this.horasMateria,
           this.horasAusenciaMaximasCursada, this.horasAusenciaMaximaPromocion, "admin", this.fechaCreacion, new Array<Alumno>());
       this.planillaService.addPlanilla(this.planilla);

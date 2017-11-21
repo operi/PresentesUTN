@@ -10,16 +10,12 @@
 </ion-header>
 
 <ion-content>
-  <form #firmarFormCtrl="ngForm" (ngSubmit)="firmar($event)">
+  <form #firmarFormCtrl="ngForm" (ngSubmit)="firmar()">
 
     <ion-list>
 
       <ion-item>
-        <ion-input name="clase" type="string" placeholder="Clase"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input name="dia" type="string" placeholder="Dia"></ion-input>
+        <ion-input name="tema" type="string" placeholder="Tema"></ion-input>
       </ion-item>
 
     </ion-list>
