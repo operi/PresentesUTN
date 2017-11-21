@@ -9,7 +9,7 @@ import { NuevoDiaPage } from '../../pages/nuevo-dia/nuevo-dia';
 import { TomarAsistenciaPage } from '../../pages/tomar-asistencia/tomar-asistencia';
 import { FirmarPlanillaPage } from '../../pages/firmar-planilla/firmar-planilla';
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
-import { Service } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/service';
 
 
 @Component({

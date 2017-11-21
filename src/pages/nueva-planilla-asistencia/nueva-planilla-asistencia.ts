@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { PlanillaAsistencia } from '../../app/model/planilla-asistencia';
-import { Service } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/service';
 import { Alumno } from '../../app/model/alumno';
 import { Docente } from '../../app/model/docente';
 

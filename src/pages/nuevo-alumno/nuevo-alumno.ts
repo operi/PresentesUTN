@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { Service } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/service';
 import { Alumno } from '../../app/model/alumno';
 import { EstadoAlumno } from '../../app/model/enum-estado-alumno';
 

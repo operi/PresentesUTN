@@ -5,7 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { PlanillasAsistenciaPage } from '../pages/planillas-asistencia/planillas-asistencia';
-import { Service } from './services/planilla.service';
+import { Service } from './services/service';
 import { PlanillaAsistencia} from './model/planilla-asistencia';
 
 @Component({

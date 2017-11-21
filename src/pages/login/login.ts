@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { PlanillasAsistenciaPage } from '../planillas-asistencia/planillas-asistencia';
 import { Docente } from '../../app/model/docente';
-import { Service } from '../../app/services/planilla.service';
+import { Service } from '../../app/services/service';
 
 @Component({
   selector: 'login',
