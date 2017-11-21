@@ -8,7 +8,7 @@ export class PlanillaAsistencia {
   private anioCursada: string;
   private diaCursada: string;
   private cuatrimestre: string;
-  private private // cantidad de horas que se computaran por cada falta
+  // cantidad de horas que se computaran por cada falta
   private horasPorAusencia: string;
   private horasMateria: string;
   // 80% horasMateria
