@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { HomePage } from '../home/home';
+import { PlanillasAsistenciaPage } from '../planillas-asistencia/planillas-asistencia';
 import { Docente } from '../../app/model/docente';
 import { Service } from '../../app/services/planilla.service';
 
@@ -31,7 +31,7 @@ export class LoginPage {
     if (docente) {
       console.log(docente);
       this.service.setLoggedDocente(docente);
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(PlanillasAsistenciaPage);
     } else {
       alert("Authentication error");
     }
